@@ -18,7 +18,7 @@
 
 			<body> <?php
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=50'; 
+					$url = pg.'/eadmin/administrativo.php?link=50'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -26,7 +26,7 @@
 						</script>
 					";	
 				}else{
-					$url = pg.'/adm/administrativo.php?link=50'; 
+					$url = pg.'/eadmin/administrativo.php?link=50'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

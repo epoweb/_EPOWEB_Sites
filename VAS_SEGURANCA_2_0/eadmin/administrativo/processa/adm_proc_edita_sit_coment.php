@@ -6,7 +6,7 @@
 	$salvar_dados_bd = 1; //Valor $salvar_dados_bd = 1 deve salvar no banco / $salvar_dados_bd = 2 não salvar no banco
 	
 	if(empty($_POST['nome'])){
-		$url = pg.'/adm/administrativo.php?link=62'; 
+		$url = pg.'/eadmin/administrativo.php?link=62'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -17,7 +17,7 @@
 	}
 	
 	if(empty($_POST['email'])){
-		$url = pg.'/adm/administrativo.php?link=62'; 
+		$url = pg.'/eadmin/administrativo.php?link=62'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -28,7 +28,7 @@
 	}
 	
 	if(empty($_POST['mensagem'])){
-		$url = pg.'/adm/administrativo.php?link=62'; 
+		$url = pg.'/eadmin/administrativo.php?link=62'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -39,7 +39,7 @@
 	}
 	
 	if(empty($_POST['artigo_id'])){
-		$url = pg.'/adm/administrativo.php?link=62'; 
+		$url = pg.'/eadmin/administrativo.php?link=62'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -50,7 +50,7 @@
 	}
 	
 	if(empty($_POST['situacoes_comentario_id'])){
-		$url = pg.'/adm/administrativo.php?link=62'; 
+		$url = pg.'/eadmin/administrativo.php?link=62'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -88,7 +88,7 @@
 
 			<body> <?php
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=60&id=$id'; 
+					$url = pg.'/eadmin/administrativo.php?link=60&id=$id'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -96,7 +96,7 @@
 						</script>
 					";	
 				}else{
-					$url = pg.'/adm/administrativo.php?link=60&id=$id'; 
+					$url = pg.'/eadmin/administrativo.php?link=60&id=$id'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

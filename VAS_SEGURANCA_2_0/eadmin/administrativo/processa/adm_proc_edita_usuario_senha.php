@@ -17,7 +17,7 @@
 			//Estando vazio redirecionao usuário para o formulário
 			
 			if(empty($_POST['senha'])){
-				$url = pg.'/adm/cliente.php?link=3&id='.$cliente_id; 
+				$url = pg.'/eadmin/cliente.php?link=3&id='.$cliente_id; 
 				echo "
 					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 				";	
@@ -36,7 +36,7 @@
 				$resultado_usuario = mysqli_query($conn, $result_usuario);
 				
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=5&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=5&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -44,7 +44,7 @@
 						</script>
 					";	
 				}else{
-					$url = pg.'/adm/administrativo.php?link=5&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=5&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

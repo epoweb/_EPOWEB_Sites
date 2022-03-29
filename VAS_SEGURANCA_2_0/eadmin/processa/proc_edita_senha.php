@@ -6,7 +6,7 @@
 	$salvar_dados_bd = 1; //Valor $salvar_dados_bd = 1 deve salvar no banco / $salvar_dados_bd = 2 não salvar no banco
 	
 	if(empty($_POST['id'])){
-		$url = pg.'/adm/editar_senha.php'; 
+		$url = pg.'/eadmin/editar_senha.php'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -22,7 +22,7 @@
 			$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 			if(isset($row_usuario)){
 				$recuperar_senha = $row_usuario['recuperar_senha'];				
-				$url = pg.'/adm/editar_senha.php?chave='.$recuperar_senha; 
+				$url = pg.'/eadmin/editar_senha.php?chave='.$recuperar_senha; 
 				echo "
 					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 				";	
@@ -53,7 +53,7 @@
 			<body> <?php
 				if(mysqli_affected_rows($conn) != 0){
 					$_SESSION['recuperarsenha'] = "Senha alterada com sucesso.";
-					$url = pg.'/adm/index.php'; 
+					$url = pg.'/eadmin/index.php'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -62,7 +62,7 @@
 					";	
 				}else{
 					$_SESSION['recuperarsenha'] = "Erro ao atualizar a senha. Entre em contato cesar@celke.com.br.";
-					$url = pg.'/adm/editar_senha.php'; 
+					$url = pg.'/eadmin/editar_senha.php'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

@@ -25,7 +25,7 @@
 		$salvar_dados_bd = 1; //Valor $salvar_dados_bd = 1 deve salvar no banco / $salvar_dados_bd = 2 não salvar no banco
 		
 		if(empty($_POST['txt_email'])){
-			$url = pg.'/adm/recuperar_senha.php'; 
+			$url = pg.'/eadmin/recuperar_senha.php'; 
 			echo "
 				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 			";	
@@ -54,7 +54,7 @@
 			
 			$assunto = 'Alterar a senha';
 			
-			$url = pg.'/adm/editar_senha.php?chave='.$recuperar_senha;	
+			$url = pg.'/eadmin/editar_senha.php?chave='.$recuperar_senha;	
 			//Corpo da Mensagem
 			$mensagem = "Olá <br><br>";
 			$mensagem .= "Você solicitou uma alteração de senha em Celke.<br>";
@@ -79,7 +79,7 @@
 					if($Mailer->Send()){
 						if(mysqli_affected_rows($conn) != 0){
 							$_SESSION['recuperarsenha'] = "Instruções de redefinição de senha foram enviadas para o seu e-mail com Sucesso.";
-							$url = pg.'/adm/index.php'; 
+							$url = pg.'/eadmin/index.php'; 
 							echo "
 								<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 								<script type=\"text/javascript\">
@@ -88,7 +88,7 @@
 							";	
 						}else{
 							$_SESSION['recuperarsenha'] = "Instruções de redefinição de senha não foram enviadas para o seu e-mail. Entre em contato cesar@celke.com.br.";
-							$url = pg.'/adm/recuperar_senha.php'; 
+							$url = pg.'/eadmin/recuperar_senha.php'; 
 							echo "
 								<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 								<script type=\"text/javascript\">
@@ -99,7 +99,7 @@
 					}else{
 						//echo "Erro no envio do e-mail: " . $Mailer->ErrorInfo;
 						$_SESSION['recuperarsenha'] = "Instruções de redefinição de senha não foram enviadas para o seu e-mail. Entre em contato cesar@celke.com.br.";
-						$url = pg.'/adm/recuperar_senha.php'; 
+						$url = pg.'/eadmin/recuperar_senha.php'; 
 						echo "
 							<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 							<script type=\"text/javascript\">

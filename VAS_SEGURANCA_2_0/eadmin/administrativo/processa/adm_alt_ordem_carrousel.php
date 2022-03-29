@@ -45,34 +45,16 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8">
-			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  			<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-  			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 		</head>
 
-		<body> 
-			
-			
-			
-			
-			<?php
+		<body> <?php
 			if(mysqli_affected_rows($conn) != 0){
 				$url = pg.'/eadmin/administrativo.php?link=67'; 
 				echo "
-				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
-					<script>
-					EventoAlert(\"Hello world!\");
-
-					/Funcao do sweetalert tab
-$(function (){
-    var close = window.swal.close;
-    window.swal.close = function() {
-        close();
-        window.onkeydown = null;
-    };
-});
-
-					</script>		
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
+					<script type=\"text/javascript\">
+						alert(\"Ordem do Carrousel alterado com Sucesso.\");
+					</script>
 				";	
 			}else{
 				$url = pg.'/eadmin/administrativo.php?link=67'; 

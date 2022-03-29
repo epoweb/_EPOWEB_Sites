@@ -6,7 +6,7 @@
 	$salvar_dados_bd = 1; //Valor $salvar_dados_bd = 1 deve salvar no banco / $salvar_dados_bd = 2 não salvar no banco
 	
 	if(empty($_POST['transacao_cod'])){
-		$url = pg.'/adm/administrativo.php?link=86'; 
+		$url = pg.'/eadmin/administrativo.php?link=86'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -17,7 +17,7 @@
 	}
 	
 	if(empty($_POST['tipo_pagamento'])){
-		$url = pg.'/adm/administrativo.php?link=86'; 
+		$url = pg.'/eadmin/administrativo.php?link=86'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -28,7 +28,7 @@
 	}
 	
 	if(empty($_POST['status_transacao'])){
-		$url = pg.'/adm/administrativo.php?link=86'; 
+		$url = pg.'/eadmin/administrativo.php?link=86'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -39,7 +39,7 @@
 	}
 	
 	if(empty($_POST['produto_id'])){
-		$url = pg.'/adm/administrativo.php?link=86'; 
+		$url = pg.'/eadmin/administrativo.php?link=86'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -143,11 +143,11 @@
 			<body> 
 				<?php
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=84&id='.$id;
+					$url = pg.'/eadmin/administrativo.php?link=84&id='.$id;
 					$_SESSION['retorno_sucesso_transac'] = "Transação alterada com Sucesso.";
 					echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>";
 				}else{
-					$url = pg.'/adm/administrativo.php?link=86&id='.$id;
+					$url = pg.'/eadmin/administrativo.php?link=86&id='.$id;
 					$_SESSION['retorno_erro_transac'] = "Transação não foi alterada com Sucesso.";
 					echo "<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>";
 				}?>

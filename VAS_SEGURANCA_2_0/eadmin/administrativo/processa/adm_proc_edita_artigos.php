@@ -6,7 +6,7 @@
 	$salvar_dados_bd = 1; //Valor $salvar_dados_bd = 1 deve salvar no banco / $salvar_dados_bd = 2 não salvar no banco
 		
 	if(empty($_POST['titulo'])){
-		$url = pg.'/adm/administrativo.php?link=58'; 
+		$url = pg.'/eadmin/administrativo.php?link=58'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -17,7 +17,7 @@
 	}
 	
 	if(empty($_POST['conteudo'])){
-		$url = pg.'/adm/administrativo.php?link=58'; 
+		$url = pg.'/eadmin/administrativo.php?link=58'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -28,7 +28,7 @@
 	}
 	
 	if(empty($_POST['descricao'])){
-		$url = pg.'/adm/administrativo.php?link=58'; 
+		$url = pg.'/eadmin/administrativo.php?link=58'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -39,7 +39,7 @@
 	}
 	
 	if(empty($_POST['slug'])){
-		$url = pg.'/adm/administrativo.php?link=58'; 
+		$url = pg.'/eadmin/administrativo.php?link=58'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -54,7 +54,7 @@
 	}
 	
 	if(empty($_POST['categorias_artigo_id'])){
-		$url = pg.'/adm/administrativo.php?link=58'; 
+		$url = pg.'/eadmin/administrativo.php?link=58'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -65,7 +65,7 @@
 	}
 	
 	if(empty($_POST['situacoes_artigo_id'])){
-		$url = pg.'/adm/administrativo.php?link=58'; 
+		$url = pg.'/eadmin/administrativo.php?link=58'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -139,7 +139,7 @@
 
 			<body> <?php
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=55'; 
+					$url = pg.'/eadmin/administrativo.php?link=55'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -147,7 +147,7 @@
 						</script>
 					";	
 				}else{
-					$url = pg.'/adm/administrativo.php?link=55'; 
+					$url = pg.'/eadmin/administrativo.php?link=55'; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

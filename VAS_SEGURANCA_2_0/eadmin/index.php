@@ -20,10 +20,7 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <!-- Sweet Alert -->
-  <script src="sweetalert/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css">
-  <link rel="stylesheet" type="text/css" href="sweetalert/facebook.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>

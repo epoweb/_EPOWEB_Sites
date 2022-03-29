@@ -105,43 +105,43 @@
 		//Verificar pagina anterior e posterior
 		$pagina_anterior = $pagina - 1;
 		$pagina_posterior = $pagina + 1;
-	?>
-	<nav class="text-center">
-		<ul class="pagination">
-			<li>
-				<?php 
-					if($pagina_anterior != 0){
-						?><a href="administrativo.php?link=67&pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a><?php
-					}else{
-						?><span aria-hidden="true">&laquo;</span><?php
-					}
-				?>
-			</li>
-			<?php
-				//Apresentar a paginação
-				for($i = 1; $i < $num_pagina + 1; $i++){
+		?>
+		<nav class="text-center">
+			<ul class="pagination">
+				<li>
+					<?php 
+						if($pagina_anterior != 0){
+							?><a href="administrativo.php?link=67&pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a><?php
+						}else{
+							?><span aria-hidden="true">&laquo;</span><?php
+						}
 					?>
-						<li><a href="administrativo.php?link=67&pagina=<?php echo $i; ?>">
-							<?php echo $i; ?>
-						</a></li>
-					<?php
-				}
-			?>
-			<li>
-				<?php 
-					if($pagina_posterior <= $num_pagina){
-						?><a href="administrativo.php?link=67&pagina=<?php echo $pagina_posterior; ?>" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a><?php
-					}else{
-						?><span aria-hidden="true">&raquo;</span><?php
+				</li>
+				<?php
+					//Apresentar a paginação
+					for($i = 1; $i < $num_pagina + 1; $i++){
+						?>
+							<li><a href="administrativo.php?link=67&pagina=<?php echo $i; ?>">
+								<?php echo $i; ?>
+							</a></li>
+						<?php
 					}
 				?>
-			</li>
-		</ul>
-	</nav>
+				<li>
+					<?php 
+						if($pagina_posterior <= $num_pagina){
+							?><a href="administrativo.php?link=67&pagina=<?php echo $pagina_posterior; ?>" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a><?php
+						}else{
+							?><span aria-hidden="true">&raquo;</span><?php
+						}
+					?>
+				</li>
+			</ul>
+		</nav>
 	</div>
 </div>	<!-- End Table with hoverable rows -->
 

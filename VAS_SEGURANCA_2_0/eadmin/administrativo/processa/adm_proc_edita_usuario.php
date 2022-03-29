@@ -23,7 +23,7 @@
 	
 
 	if(empty($_POST['email'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -34,7 +34,7 @@
 	}
 	
 	if(empty($_POST['cpf'])){
-		$url = pg.'/adm/administrativo.php?link=4';  
+		$url = pg.'/eadmin/administrativo.php?link=4';  
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -47,7 +47,7 @@
 		$Resto = ""; 
 		//strCPF  = RetiraCaracteresInvalidos(strCPF,11);
 		if ( strlen($cpf) != 11 || $cpf == '00000000000' || $cpf == '11111111111' || $cpf == '22222222222' || $cpf == '33333333333' || $cpf == '44444444444' || $cpf == '55555555555' || $cpf == '66666666666' || $cpf == '77777777777' || $cpf == '88888888888' || $cpf == '99999999999') {			
-			$url = pg.'/adm/cadastrar_usuario.php'; 
+			$url = pg.'/eadmin/cadastrar_usuario.php'; 
 			echo "
 				<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 			";	
@@ -60,7 +60,7 @@
 				}
 				$d = ((10 * $d) % 11) % 10;
 				if ($cpf{$c} != $d) {			
-					$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 					";	
@@ -75,7 +75,7 @@
 	
 	
 	if(empty($_POST['telefone'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -87,7 +87,7 @@
 	
 	
 	if(empty($_POST['cep'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -99,7 +99,7 @@
 	
 	
 	if(empty($_POST['rua'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id;  
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id;  
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -111,7 +111,7 @@
 	
 	
 	if(empty($_POST['numero'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -122,7 +122,7 @@
 	}	
 	
 	if(empty($_POST['bairro'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -134,7 +134,7 @@
 	
 	
 	if(empty($_POST['cidade'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -146,7 +146,7 @@
 	
 	
 	if(empty($_POST['uf'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -158,7 +158,7 @@
 		
 	
 	if(empty($_POST['select_situacao'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -169,7 +169,7 @@
 	}
 	
 	if(empty($_POST['select_nivel_acesso'])){
-		$url = pg.'/adm/administrativo.php?link=4&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=4&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -238,7 +238,7 @@
 
 			<body> <?php
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=5&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=5&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -246,7 +246,7 @@
 						</script>
 					";	
 				}else{
-					$url = pg.'/adm/administrativo.php?link=5&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=5&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

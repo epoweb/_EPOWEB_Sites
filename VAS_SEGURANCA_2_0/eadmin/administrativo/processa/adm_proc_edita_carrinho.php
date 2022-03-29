@@ -7,7 +7,7 @@
 	$id = mysqli_real_escape_string($conn, $_POST['id']);
 	
 	if(empty($_POST['plano_id'])){
-		$url = pg.'/adm/administrativo.php?link=86'; 
+		$url = pg.'/eadmin/administrativo.php?link=86'; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -18,7 +18,7 @@
 	}	
 	
 	if(empty($_POST['preco'])){
-		$url = pg.'/adm/administrativo.php?link=90&id='.$id; 
+		$url = pg.'/eadmin/administrativo.php?link=90&id='.$id; 
 		echo "
 			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 		";	
@@ -44,7 +44,7 @@
 
 			<body> <?php
 				if(mysqli_affected_rows($conn) != 0){
-					$url = pg.'/adm/administrativo.php?link=88&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=88&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">
@@ -52,7 +52,7 @@
 						</script>
 					";	
 				}else{
-					$url = pg.'/adm/administrativo.php?link=88&id='.$id; 
+					$url = pg.'/eadmin/administrativo.php?link=88&id='.$id; 
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=$url'>
 						<script type=\"text/javascript\">

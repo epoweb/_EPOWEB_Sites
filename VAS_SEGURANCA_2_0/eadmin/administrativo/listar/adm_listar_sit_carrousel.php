@@ -24,18 +24,28 @@
 	$total_sit_carrouses = mysqli_num_rows($resultado_sit_carrouses);
 	
 ?>
-<div class="container theme-showcase" role="main">
-	<div class="page-header">
-        <h1>Lista de Situação Carrouses</h1>
-	</div>
-	<div class="row espaco">
-		<div class="pull-right">
-			<a href="administrativo.php?link=73"><button type='button' class='btn btn-sm btn-success'>Cadastrar</button></a>
-		</div>
-	</div>
-	<div class="row">
-        <div class="col-md-12">
-			<table class="table">
+<main id="main" class="main" style="margin-top:-15px">
+<div class="card">
+	<div class="pagetitle" style="padding: 10px">
+		<h1>Listar Situação Banners</h1>
+		<nav>
+			<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+			<li class="breadcrumb-item active">Banners</li>
+			<li class="breadcrumb-item active">Listar Situação Banners</li>
+			</ol>
+		</nav>
+	</div><!-- End Page Title -->
+
+	<div class="card-body">
+		<div class="row espaco">
+			<div class="pull-right">
+			<a href="administrativo.php?link=73"><button type='button' class='btn btn-sm btn-success' style='font-size:14px'>Cadastrar</button></a>
+			</div>
+		</div>	
+	
+		<!-- Table with hoverable rows -->
+			<table class="table" style='font-size:14px'>
 				<thead>
 					<tr>
 						<th class="text-center">Id</th>
@@ -52,66 +62,65 @@
 							<td class="text-center"><?php echo date('d/m/Y H:i:s',strtotime($row_sit_carrouses["created"])); ?></td>
 							<td class="text-center">
 								<a href="administrativo.php?link=72&id=<?php echo $row_sit_carrouses["id"]; ?>">
-									<button type="button" class="btn btn-xs btn-primary">
-										Visualizar
+									<button type="button" class="btn btn-xs btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="" style="font-size:12px" data-bs-original-title="Visualizar">
+										<i class="bi bi-eye"></i>
 									</button>
 								</a>
-								<a href="administrativo.php?link=74&id=<?php echo $row_sit_carrouses["id"]; ?>">
-									<button type="button" class="btn btn-xs btn-warning">
-										Editar
+								<a href="administrativo.php?link=74&id=<?php echo $row_sit_carrouses["id"]; ?>">									
+									<button type="button" class="btn btn-xs btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" style="font-size:12px" data-bs-original-title="Editar">
+										<i class="bi bi-pencil"></i>
 									</button>
 								</a>
 								<a href="administrativo/processa/adm_apagar_sit_carrouses.php?id=<?php echo $row_sit_carrouses["id"]; ?>">
-									<button type="button" class="btn btn-xs btn-danger">
-										Apagar
-									</button>
+									<button type="button" class="btn btn-xs btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="" style="font-size:12px" data-bs-original-title="Apagar">
+										<i class="bi bi-trash"></i>
+									</button>	
 								</a>
 							</td>
 						</tr>
 					<?php } ?>
 				</tbody>
 			</table>
-        </div>
-	</div>
-	<?php
-		//Verificar pagina anterior e posterior
-		$pagina_anterior = $pagina - 1;
-		$pagina_posterior = $pagina + 1;
-	?>
-	<nav class="text-center">
-		<ul class="pagination">
-			<li>
-				<?php 
-					if($pagina_anterior != 0){
-						?><a href="administrativo.php?link=71&pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
-							<span aria-hidden="true">&laquo;</span>
-						</a><?php
-					}else{
-						?><span aria-hidden="true">&laquo;</span><?php
-					}
-				?>
-			</li>
 			<?php
-				//Apresentar a paginação
-				for($i = 1; $i < $num_pagina + 1; $i++){
-					?>
-						<li><a href="administrativo.php?link=71&pagina=<?php echo $i; ?>">
-							<?php echo $i; ?>
-						</a></li>
-					<?php
-				}
+				//Verificar pagina anterior e posterior
+				$pagina_anterior = $pagina - 1;
+				$pagina_posterior = $pagina + 1;
 			?>
-			<li>
-				<?php 
-					if($pagina_posterior <= $num_pagina){
-						?><a href="administrativo.php?link=71&pagina=<?php echo $pagina_posterior; ?>" aria-label="Next">
-							<span aria-hidden="true">&raquo;</span>
-						</a><?php
-					}else{
-						?><span aria-hidden="true">&raquo;</span><?php
+		<nav class="text-center">
+			<ul class="pagination">
+				<li>
+					<?php 
+						if($pagina_anterior != 0){
+							?><a href="administrativo.php?link=71&pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a><?php
+						}else{
+							?><span aria-hidden="true">&laquo;</span><?php
+						}
+					?>
+				</li>
+				<?php
+					//Apresentar a paginação
+					for($i = 1; $i < $num_pagina + 1; $i++){
+						?>
+							<li><a href="administrativo.php?link=71&pagina=<?php echo $i; ?>">
+								<?php echo $i; ?>
+							</a></li>
+						<?php
 					}
 				?>
-			</li>
-		</ul>
-	</nav>
-</div>
+				<li>
+					<?php 
+						if($pagina_posterior <= $num_pagina){
+							?><a href="administrativo.php?link=71&pagina=<?php echo $pagina_posterior; ?>" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a><?php
+						}else{
+							?><span aria-hidden="true">&raquo;</span><?php
+						}
+					?>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div> 
