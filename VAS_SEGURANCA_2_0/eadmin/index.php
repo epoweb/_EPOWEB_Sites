@@ -20,7 +20,6 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">  
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="css/bootstrap.css" rel="stylesheet">
 
 </head>
 <body>

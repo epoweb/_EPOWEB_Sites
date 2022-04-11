@@ -1,43 +1,43 @@
 <main id="main" class="main" style="margin-top:-15px">
     <div class="pagetitle">
-      <h1>Bem Vindo(a)!</h1>
+	  <?php	echo "<h1> Olá administrador(a) ". $_SESSION['usuarioNome'] .", Bem Vindo! </h1>";	?>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item active">
 		  <!--INÍCIO - SCRIPT DATA E HORA E SAUDAÇÃO -->
-		  <script language="Javascript" type="text/Javascript">
-              var dataHora, xHora, xDia, dia, mes, ano, saudacao;
-              dataHora = new Date();
-              xHora = dataHora.getHours();
-              if (xHora >= 0 && xHora <6) {saudacao = "Boa Madrugada! "} if (xHora >= 6 && xHora <12) {saudacao = "Bom Dia! "} if (xHora >= 12 && xHora < 18) {saudacao = "Boa Tarde! "} if (xHora >= 18 && xHora <= 23) {saudacao = "Boa Noite!"}
-              xDia = dataHora.getDay();
-              diaSem = new Array(7);
-              diaSem[0] = "Domingo"; diaSem[1] = "Segunda-Feira"; diaSem[2] = "Terça-Feira"; diaSem[3] = "Quarta-Feira"; diaSem[4] = "Quinta-Feira"; diaSem[5] = "Sexta-Feira"; diaSem[6] = "Sábado";
-              dia = dataHora.getDate();
-              mes = dataHora.getMonth();
-              mesAno = new Array(12);
-              mesAno[0] = "Janeiro"; mesAno[1] = "Fevereiro"; mesAno[2] = "Março"; mesAno[3] = "Abril"; mesAno[4] = "Maio"; mesAno[5] = "Junho"; mesAno[6] = "Julho"; mesAno[7] = "Agosto";
-              mesAno[8] = "Setembro"; mesAno[9] = "Outubro"; mesAno[10] = "Novembro"; mesAno[11] = "Dezembro";
-              ano = dataHora.getFullYear();
-              document.write("" + "" + saudacao + " " + diaSem[xDia] + ", " + dia + " de " + mesAno[mes] + " de " + ano + "");
-              
-              function showTimer() {
-              var time=new Date();
-              var hour=time.getHours();
-              var minute=time.getMinutes();
-              var second=time.getSeconds();
-              if(hour<10)   hour  ="0"+hour;
-              if(minute<10) minute="0"+minute;
-              if(second<10) second="0"+second;
-              var st=hour+":"+minute+":"+second;
-              document.getElementById("timer").innerHTML=st; 
-              }
-              function initTimer() {
-              // O metodo nativo setInterval executa uma determinada funcao em um determinado tempo  
-              setInterval(showTimer,1000);
-             }
-              </script><!--FIM - SCRIPT DATA E HORA E SAUDAÇÃO -->
-              <body onLoad="initTimer()"> - <span id="timer"></span></body>
+		  	<script language="Javascript" type="text/Javascript">
+				var dataHora, xHora, xDia, dia, mes, ano, saudacao;
+				dataHora = new Date();
+				xHora = dataHora.getHours();
+				if (xHora >= 0 && xHora <6) {saudacao = "Boa Madrugada! "} if (xHora >= 6 && xHora <12) {saudacao = "Bom Dia! "} if (xHora >= 12 && xHora < 18) {saudacao = "Boa Tarde! "} if (xHora >= 18 && xHora <= 23) {saudacao = "Boa Noite!"}
+				xDia = dataHora.getDay();
+				diaSem = new Array(7);
+				diaSem[0] = "Domingo"; diaSem[1] = "Segunda-Feira"; diaSem[2] = "Terça-Feira"; diaSem[3] = "Quarta-Feira"; diaSem[4] = "Quinta-Feira"; diaSem[5] = "Sexta-Feira"; diaSem[6] = "Sábado";
+				dia = dataHora.getDate();
+				mes = dataHora.getMonth();
+				mesAno = new Array(12);
+				mesAno[0] = "Janeiro"; mesAno[1] = "Fevereiro"; mesAno[2] = "Março"; mesAno[3] = "Abril"; mesAno[4] = "Maio"; mesAno[5] = "Junho"; mesAno[6] = "Julho"; mesAno[7] = "Agosto";
+				mesAno[8] = "Setembro"; mesAno[9] = "Outubro"; mesAno[10] = "Novembro"; mesAno[11] = "Dezembro";
+				ano = dataHora.getFullYear();
+				document.write("" + "" + saudacao + " " + diaSem[xDia] + ", " + dia + " de " + mesAno[mes] + " de " + ano + "");
+				
+				function showTimer() {
+				var time=new Date();
+				var hour=time.getHours();
+				var minute=time.getMinutes();
+				var second=time.getSeconds();
+				if(hour<10)   hour  ="0"+hour;
+				if(minute<10) minute="0"+minute;
+				if(second<10) second="0"+second;
+				var st=hour+":"+minute+":"+second;
+				document.getElementById("timer").innerHTML=st; 
+				}
+				function initTimer() {
+				// O metodo nativo setInterval executa uma determinada funcao em um determinado tempo  
+				setInterval(showTimer,1000);
+				}
+        	</script><!--FIM - SCRIPT DATA E HORA E SAUDAÇÃO -->
+            <body onLoad="initTimer()"> - <span id="timer"></span></body>
 		  </li>
         </ol>
       </nav>

@@ -27,12 +27,12 @@
 <main id="main" class="main" style="margin-top:-15px">
 	<div class="card">
 		<div class="pagetitle" style="padding: 10px">
-			<h1>Listar Contato</h1>
+			<h1>Listar Mensagens</h1>
 			<nav>
 				<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="#">Home</a></li>
-				<li class="breadcrumb-item active">Contato</li>
-				<li class="breadcrumb-item active">Listar Contato</li>
+				<li class="breadcrumb-item">Home</li>
+				<li class="breadcrumb-item active">Mensagens</li>
+				<li class="breadcrumb-item active">Listar Mensagens</li>
 				</ol>
 			</nav>
 		</div><!-- End Page Title -->
@@ -40,7 +40,7 @@
 		<div class="card-body">
 			<div class="row espaco">
 			</div>	
-			<table class="table">
+			<table class="table" style="font-size:14px">
 					<thead>
 						<tr>
 							<th class="text-center">Id</th>

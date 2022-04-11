@@ -42,21 +42,22 @@
 				<label class="col-sm-2 control-label"style="font-size: 14px" >Conteúdo</label>
 				<div class="col-sm-10">
 					
-					<?php
-						if(!empty($_SESSION['value_conteudo'])){
-							?> <textarea name="conteudo" class="form-control" rows="3"><?php echo $_SESSION['value_conteudo']; ?></textarea> <?php						
-							unset($_SESSION['value_conteudo']);
-						}else{
-							?> <textarea name="conteudo" class="form-control" rows="3" style="font-size: 14px"></textarea> <?php
-						}
-					?>					
+						<?php
+							if(!empty($_SESSION['value_conteudo'])){
+								?> <textarea name="conteudo" class="form-control" rows="3"><?php echo $_SESSION['value_conteudo']; ?></textarea> <?php						
+								unset($_SESSION['value_conteudo']);
+							}else{
+								?> <textarea name="conteudo" class="form-control" rows="3" style="font-size: 14px"></textarea> <?php
+							}
+						?>					
+						
+						<?php 
+							if(!empty($_SESSION['artigo_conteudo_vazio'])){
+								echo "<p style='color: #ff0000; '>".$_SESSION['artigo_conteudo_vazio']."</p>";
+								unset($_SESSION['artigo_conteudo_vazio']);
+							}
+						?> 
 					
-					<?php 
-						if(!empty($_SESSION['artigo_conteudo_vazio'])){
-							echo "<p style='color: #ff0000; '>".$_SESSION['artigo_conteudo_vazio']."</p>";
-							unset($_SESSION['artigo_conteudo_vazio']);
-						}
-					?> 
 				</div>
 			</div>
 			
