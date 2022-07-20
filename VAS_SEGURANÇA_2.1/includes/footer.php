@@ -23,11 +23,11 @@
                             <h3>Links Úteis</h3>
                         </div>
                         <ul class="list_style">
-                            <li><a href="#">• Controlador de Acesso</a></li>
-                            <li><a href="#">• Fiscal de Loja (Piso)</a></li>
-                            <li><a href="#">• Segurança Patrimonial</a></li>
-                            <li><a href="#">• Monitoramento</a></li>
-                            <li><a href="#">• Transporte Vip</a></li>
+                            <li><a href="controlador_acesso.php">• Controlador de Acesso</a></li>
+                            <li><a href="fiscal_loja.php">• Fiscal de Loja (Piso)</a></li>
+                            <li><a href="seguranca_patrimonial.php">• Segurança Patrimonial</a></li>
+                            <li><a href="monitoramento.php">• Monitoramento</a></li>
+                            <li><a href="transporte_vip.php">• Transporte Vip</a></li>
                         </ul>
                     </aside>
                 </div>
@@ -37,10 +37,10 @@
                             <h3>Horário Atendimento</h3>
                         </div>
                         <ul class="list_style">
-                            <li><a href="#">Seg. :  Sex.: 08:00 - 17:00</a></li>
-                            <li><a href="#">Sábado : Fechado</a></li>
-                            <li><a href="#">Domingo : Fechado</a></li>
-                            <li><a href="#">Feriados : Fechado</a></li>
+                            <li><a href="contato.php">Segunda à Sexta: 08:00 - 17:00</a></li>
+                            <li><a href="contato.php">Sábado: Fechado</a></li>
+                            <li><a href="contato.php">Domingo: Fechado</a></li>
+                            <li><a href="contato.php">Feriados: Fechado</a></li>
                         </ul>
                     </aside>
                 </div>

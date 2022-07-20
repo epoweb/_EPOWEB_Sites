@@ -1,223 +1,108 @@
-<!-- Inicio Comentario -->
-	<?php
-		if($_SERVER['REQUEST_METHOD']=='POST'){
-			$requisicao = md5(implode($_POST));
-			if(isset($_SESSION['ultima_requisicao']) && $_SESSION['ultima_requisicao'] == $requisicao){
-				echo "
-					<script type=\"text/javascript\">
-						alert(\"Todos os campos são obrigatórios.\");
-					</script>
-					";
-			}else{
-				$_SESSION['ultima_requisicao'] = $requisicao;
-				echo "Valor da requisicao: ". $requisicao.' - '. $_SESSION['ultima_requisicao'];
-				
-				$salvar_dados_bd = 1; //Valor $salvar_dados_bd = 1 deve salvar no banco / $salvar_dados_bd = 2 não salvar no banco
-				if(isset($_POST['nome'])){
-					if(empty($_POST['nome'])){
-						$_SESSION['msg_contato_nome_vazio'] = "Campo nome é obrigatorio!";		
-						$salvar_dados_bd = 2;
-						//echo $_SESSION['coment_artigo_nome_vazio'];
-					}else{
-						$_SESSION['value_nome'] = $_POST['nome'];
-					}
-					
-					if(empty($_POST['email'])){
-						$_SESSION['msg_contato_email_vazio'] = "Campo E-mail é obrigatorio!";		
-						$salvar_dados_bd = 2;
-					}else{
-						$_SESSION['value_email'] = $_POST['email'];
-					}
-					
-					if(empty($_POST['telefone'])){
-						$_SESSION['msg_contato_telefone_vazio'] = "Campo telefone é obrigatorio!";		
-						$salvar_dados_bd = 2;
-					}else{
-						$_SESSION['value_telefone'] = $_POST['telefone'];
-					}
-					
-					if(empty($_POST['assunto'])){
-						$_SESSION['msg_contato_assunto_vazio'] = "Campo assunto é obrigatorio!";		
-						$salvar_dados_bd = 2;
-					}else{
-						$_SESSION['value_assunto'] = $_POST['assunto'];
-					}
-					
-					if(empty($_POST['mensagem'])){
-						$_SESSION['msg_contato_mensag_vazio'] = "Campo Mensagem é obrigatorio!";		
-						$salvar_dados_bd = 2;
-					}else{
-						$_SESSION['value_mensag'] = $_POST['mensagem'];
-					}
-					
-					if($salvar_dados_bd == 1){
-						$nome 		= mysqli_real_escape_string($conn, $_POST['nome']);
-						$email 		= mysqli_real_escape_string($conn, $_POST['email']);
-						$telefone	= mysqli_real_escape_string($conn, $_POST['telefone']);
-						$assunto	= mysqli_real_escape_string($conn, $_POST['assunto']);
-						$mensagem 	= mysqli_real_escape_string($conn, $_POST['mensagem']);
-						$result_msg_contato = "INSERT INTO mensagens_contatos (
-							nome,
-							email,	
-							telefone,
-							assunto,
-							mensagem,
-							situacoes_contato_id,
-							created)VALUES(
-							'$nome',
-							'$email',
-							'$telefone',
-							'$assunto',
-							'$mensagem',
-							'1',
-							NOW())";
-						$resultado_msg_contato = mysqli_query($conn, $result_msg_contato);
-						unset($_SESSION['value_nome']);
-						unset($_SESSION['value_email']);
-						unset($_SESSION['value_telefone']);
-						unset($_SESSION['value_assunto']);
-						unset($_SESSION['value_mensag']);
-						echo "
-						<script type=\"text/javascript\">
-							alert(\"Mensagem enviada com sucesso.\");
-						</script>
-						";
-					}
-				}
-			}
-		}
-	?>	
-<!-- Inicio Contato -->
-<div class="container espaco-contato">
-	<div class="row featurette">
-		<div class="col-md-6">
-			<h2 class="featurette-heading">Contato por E-mail.</h2>
-			<form name="cad_msg_contato" action="" method="POST" class="form-horizontal">
-				
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Nome</label>
-					<div class="col-sm-10">
-						<input type="text" name="nome" class="form-control" id="inputEmail3" placeholder="Nome" required
-						<?php
-							if(!empty($_SESSION['value_nome'])){
-								echo "value='".$_SESSION['value_nome']."'";
-								unset($_SESSION['value_nome']);
-							}
-						?>					
-						/>
-						<?php 
-							if(!empty($_SESSION['msg_contato_nome_vazio'])){
-								echo "<p style='color: #ff0000; '>".$_SESSION['msg_contato_nome_vazio']."</p>";
-								unset($_SESSION['msg_contato_nome_vazio']);
-							}
-						?> 
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-2 control-label">E-mail</label>
-					<div class="col-sm-10">
-						<input type="email" name="email" class="form-control" id="inputEmail3" placeholder="E-mail" required
-						<?php
-							if(!empty($_SESSION['value_email'])){
-								echo "value='".$_SESSION['value_email']."'";
-								unset($_SESSION['value_email']);
-							}
-						?>					
-						/>
-						<?php 
-							if(!empty($_SESSION['msg_contato_email_vazio'])){
-								echo "<p style='color: #ff0000; '>".$_SESSION['msg_contato_email_vazio']."</p>";
-								unset($_SESSION['msg_contato_email_vazio']);
-							}
-						?> 
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Telefone</label>
-					<div class="col-sm-10">
-						<input type="text" name="telefone" class="form-control" id="inputEmail3" placeholder="Telefone" required
-						<?php
-							if(!empty($_SESSION['value_telefone'])){
-								echo "value='".$_SESSION['value_telefone']."'";
-								unset($_SESSION['value_telefone']);
-							}
-						?>					
-						/>
-						<?php 
-							if(!empty($_SESSION['msg_contato_telefone_vazio'])){
-								echo "<p style='color: #ff0000; '>".$_SESSION['msg_contato_telefone_vazio']."</p>";
-								unset($_SESSION['msg_contato_telefone_vazio']);
-							}
-						?> 
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Assunto</label>
-					<div class="col-sm-10">
-						<input type="text" name="assunto" class="form-control" id="inputEmail3" placeholder="Assunto do contato" required
-						<?php
-							if(!empty($_SESSION['value_assunto'])){
-								echo "value='".$_SESSION['value_assunto']."'";
-								unset($_SESSION['value_assunto']);
-							}
-						?>					
-						/>
-						<?php 
-							if(!empty($_SESSION['msg_contato_assunto_vazio'])){
-								echo "<p style='color: #ff0000; '>".$_SESSION['msg_contato_assunto_vazio']."</p>";
-								unset($_SESSION['msg_contato_assunto_vazio']);
-							}
-						?> 
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Mensagem</label>
-					<div class="col-sm-10">
-						
-						<?php
-							if(!empty($_SESSION['value_mensag'])){
-								?> <textarea name="mensagem" class="form-control" rows="3"><?php echo $_SESSION['value_mensag']; ?></textarea> <?php						
-								unset($_SESSION['value_mensag']);
-							}else{
-								?> <textarea name="mensagem" class="form-control" rows="3"></textarea> <?php
-							}
-						?>					
-						
-						<?php 
-							if(!empty($_SESSION['msg_contato_mensag_vazio'])){
-								echo "<p style='color: #ff0000; '>".$_SESSION['msg_contato_mensag_vazio']."</p>";
-								unset($_SESSION['msg_contato_mensag_vazio']);
-							}
-						?> 
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<input type="submit" class="btn btn-primary" value="Enviar" onclick="return val_cad_msg_contato()">
-					</div>
-				</div>
-			</form>
+<?php include_once "includes/header.php";?>
+   <!--================End Banner Area =================-->
+   <section class="map_area">
+		<div id="mapBox" class="mapBox row m0" 
+			data-lat="40.701083" 
+			data-lon="-74.1522848" 
+			data-zoom="13" 
+			data-marker="img/map-marker.png" 
+			data-info="54B, Tailstoi Town 5238 La city, IA 522364"
+			data-mlat="40.701083"
+			data-mlon="-74.1522848">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.0901536926626!2d-46.700815285019445!3d-23.708474384610085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4f8391cee647%3A0x394f4a2689dadbb9!2sVAS%20Seguran%C3%A7a!5e0!3m2!1sen!2sbr!4v1649676611782!5m2!1sen!2sbr" width="1903" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</div>
-		<div class="col-md-6">
-			<h2 class="featurette-heading">Endereço.</h2>
-			<p class="lead">
-				<address>
-					<strong>Celke.</strong><br>
-					Av. Republica Argentina, 5550 - Capão Raso<br>
-					CEP 81050-001 - Curitiba / PR<br>
-					<abbr title="Phone">P:</abbr> (41) 3503-6170
-				</address>
-				<address>
-					<strong>Cesar</strong><br>
-					<a href="mailto:#">cesar@celke.com.br</a>
-				</address>
-			</p>
-		</div>
-	</div>
-</div>
-<!-- Fim Contato -->
+    </section>      
+        <!--================End Main Header Area =================-->
+        <!--
+			<section class="banner_area">
+				<div class="container">
+					<div class="banner_text">
+						<h3>Contact Us</h3>
+						<ul>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="contato.php">Contato</a></li>
+						</ul>
+					</div>
+				</div>
+			</section> 
+		-->
+        <!--================End Main Header Area =================-->
+        
+        <!--================Contact Form Area =================-->
+        <section class="contact_form_area p_100">
+        	<div class="container">
+        		<div class="main_title">
+					<center><h2>Fale Conosco</h2></center>
+					<h5>Entre em contato conosco em estaremos retornando o contato o mais breve possível!</h5>
+				</div>
+       			<div class="row">
+       				<div class="col-lg-7">
+       					<form class="row contact_us_form" action="http://galaxyanalytics.net/demos/cake/theme/cake-html/contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="name" name="name" placeholder="Digite seu Nome">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Digite e-mail">
+							</div>
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="subject" name="subject" placeholder="Digite o Assunto">
+							</div>
+							<div class="form-group col-md-12">
+								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Digite a Mensagem"></textarea>
+							</div>
+							<div class="form-group col-md-12">
+								<button type="submit" value="submit" class="btn order_s_btn form-control">Enviar Mensagem</button>
+							</div>
+						</form>
+       				</div>
+       				<div class="col-lg-4 offset-md-1">
+       					<div class="contact_details">
+       						<div class="contact_d_item">
+       							<h3>Localização :</h3>
+       							<p>Rua Icanhema, 123 - Cidade Dutra<br /> CEP: 04810-120 - São Paulo - SP - Brasil </p>
+       						</div>
+       						<div class="contact_d_item">
+       							<h5>Ligue: <a href="tel:115660741">(11) 5667-5875 </a></h5>
+       							<h5>Email : <a href="mailto:contato@vasseguranca.com.br">contato@vasseguranca.com.br</a></h5>
+       						</div>
+       						<div class="contact_d_item">
+       							<h3>Horário Atendimento:</h3>
+       							<p>Segunda à Sexta: 08:00hrs - 17:00hrs
+								   </br>
+								   Sábado, Domingo e Feriado: Fechado
+							</p>
+       						</div>
+       					</div>
+       				</div>
+       			</div>
+        	</div>
+        </section>
+        <!--================End Contact Form Area =================-->
+        
+        
+        <!--================Newsletter Area =================-->
+        <section class="newsletter_area">
+        	<div class="container">
+        		<div class="row newsletter_inner">
+        			<div class="col-lg-6">
+        				<div class="news_left_text">
+        					<h4>Join our Newsletter list to get all the latest offers, discounts and other benefits</h4>
+        				</div>
+        			</div>
+        			<div class="col-lg-6">
+        				<div class="newsletter_form">
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="Enter your email address">
+								<div class="input-group-append">
+									<button class="btn btn-outline-secondary" type="button">Subscribe Now</button>
+								</div>
+							</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Newsletter Area =================-->
+        
+<!--================Footer Area =================-->
+<?php include_once "includes/footer.php";?>

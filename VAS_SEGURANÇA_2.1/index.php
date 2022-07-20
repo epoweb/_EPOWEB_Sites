@@ -64,7 +64,7 @@
                         <div class="welcome_left_text">
                             <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial
                                 example, which of us ever undertakes laborious physical exercise.</p>
-                            <a class="pink_btn" href="#">Know more about us</a>
+                            <a class="pink_btn" href="quem_somos.php">Saiba mais sobre nós</a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -93,9 +93,8 @@
                                 <h3>“</h3>
                             </div>
                             <div class="media-body">
-                                <p>Osed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci sed quia non numquam qui ratione voluptatem sequi nesciunt.
-                                    Neque porro quisquam est.</p>
-                                <h5>- Robert joe</h5>
+                                <p>A qualidade do serviço de forma geral é realmente superior aos concorrentes do mercado.</p>
+                                <h5>- José Eduardo Silva</h5>
                             </div>
                         </div>
                     </div>

@@ -1,9 +1,0 @@
-Curso de PHP, MySQLi e Bootstrap - Turma 2
-
-http://localhost/_CELKE/loja/adm/index.php
-
-cesar@celke.com.br	-  | 123 |
-kelly1@celke.com.br	-
-jessica@celke.com.br	-
-gabriely@celke.com.br	-
-celkeadm@gmail.com	-
